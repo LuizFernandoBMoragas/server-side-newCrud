@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const db = require("mongoose");
 
 app.get("/", (req, res) => {});
 app.post("/", (req, res) => {});
