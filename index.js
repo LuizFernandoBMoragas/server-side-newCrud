@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
+require("dotenv").config();
 
 const FoodModel = require("./models/Food");
 
@@ -9,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-  "mongodb+srv://luizfbmoragas:P4d48iv9!@crud.rmaj7.mongodb.net/food?retryWrites=true&w=majority",
+  `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@crud.rmaj7.mongodb.net/food?retryWrites=true&w=majority`,
   { useNewUrlParser: true }
 );
 
@@ -68,6 +69,6 @@ app.delete("/delete/:id", async (req, res) => {
   res.send("Deleted");
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log(`Running at port 8080!`);
 });
