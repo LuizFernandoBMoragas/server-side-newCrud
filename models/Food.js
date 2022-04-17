@@ -5,11 +5,19 @@ const FoodSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  daysSinceIAte: {
+  expirationDate: {
     type: Number,
+    required: true,
+  },
+  typeOfFood: {
+    type: String,
+    required: true,
+  },
+  countryOfOrigin: {
+    type: String,
     required: true,
   },
 });
 
-const Food = mongoose.model("FoodData", FoodSchema);
+const Food = mongoose.model("Food", FoodSchema);
 module.exports = Food;
