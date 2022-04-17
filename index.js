@@ -46,6 +46,28 @@ app.get("/read", async (req, res) => {
   });
 });
 
+app.put("/update", async (req, res) => {
+  const newFoodDrink = req.body.newFoodDrink;
+  const id = req.body.id;
+
+  try {
+    await FoodModel.findById(id, (err, updatedDrink) => {
+      updatedDrink.bestDrinkAsASideDish = newFoodDrink;
+      updatedDrink.save();
+      res.send("Update");
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+app.delete("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+
+  await FoodModel.findByIdAndRemove(id).exec();
+  res.send("Deleted");
+});
+
 app.listen(8080, () => {
   console.log(`Running at port 8080!`);
 });
