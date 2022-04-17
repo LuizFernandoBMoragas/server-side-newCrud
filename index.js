@@ -17,10 +17,12 @@ app.get("/", async (req, res) => {
     expirationDate: 3,
     typeOfFood: "Candy",
     countryOfOrigin: "Spain",
+    bestDrinkAsASideDish: "Wine",
   });
 
   try {
     await food.save();
+    res.send("Inserted data");
   } catch (error) {
     console.log(error);
   }

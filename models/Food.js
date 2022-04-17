@@ -17,6 +17,10 @@ const FoodSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  bestDrinkAsASideDish: {
+    type: String,
+    required: true,
+  },
 });
 
 const Food = mongoose.model("Food", FoodSchema);
