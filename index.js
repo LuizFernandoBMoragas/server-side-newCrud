@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-  `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@crud.rmaj7.mongodb.net/food?retryWrites=true&w=majority`,
+  `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@crud.rmaj7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   { useNewUrlParser: true }
 );
 
