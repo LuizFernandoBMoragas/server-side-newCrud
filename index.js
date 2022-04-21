@@ -70,5 +70,5 @@ app.delete("/delete/:id", async (req, res) => {
 });
 
 app.listen(process.env.PORT || 8080, () => {
-  console.log(`Running at port 8080!`);
+  console.log(`Running a new connection at port 8080!`);
 });
